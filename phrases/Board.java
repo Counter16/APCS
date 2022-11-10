@@ -1,7 +1,8 @@
 import java.util.Scanner;
 import java.io.File;
 public class Board{
-
+private String phrase = loadPhrase();
+Scanner sc = new Scanner(System.in);
 private String loadPhrase()
   {
     String tempPhrase = "";
@@ -37,4 +38,31 @@ private String loadPhrase()
       }
     } catch (Exception e) { System.out.println("Error reading or parsing phrases.txt"); }
 
+  }
+  public String askLetter(){
+    String letterGuessed = "";
+    System.out.println("Gimme number");
+    
+  }
+  public String getLoadPhrase(){
+    return loadPhrase();
+  }
+  public void runGame(){
+    String currentWord = phrase;
+    for(int i = 0; i < phrase.length; i++) {
+      
+      if(phrase.substring(i-1,i).equals(" ")){
+        System.out.print(" ");
+      }
+      else System.out.print("_");
+    }
+
+    /* 
+     * get the end word
+     * check for total mistakes == 7
+     * get the char to guess
+     * append the current word
+     * print out the current word
+     */
+    
   }
