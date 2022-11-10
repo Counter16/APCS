@@ -9,8 +9,10 @@ public class Main {
         System.out.println("What is player two's name?");
         Player playerTwo = new Player(sc.nextLine(), 0);
         sc.close();
-        System.out.println();
-        System.out.println(name.playerOne());
-        System.out.println(name.playerTwo());
+        System.out.println(playerOne.getName());
+        System.out.println(playerTwo.getName());
+        Board oihoih = new Board();
+        oihoih.runGame();
     }
+
 }

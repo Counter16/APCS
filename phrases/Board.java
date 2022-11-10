@@ -13,7 +13,7 @@ private String loadPhrase()
     try 
     {
       
-      Scanner sc = new Scanner(new File(/*Replace with the path*/"phrases.txt"));
+      Scanner sc = new Scanner(new File(/*Replace with the path*/"/workspace/APCS/phrases/phrases.txt"));
       while (sc.hasNextLine())
       {
         tempPhrase = sc.nextLine().trim();
@@ -26,7 +26,7 @@ private String loadPhrase()
     try 
     {
       int count = 0;
-      Scanner sc = new Scanner(new File(/*Replace with the path*/"phrases.txt"));
+      Scanner sc = new Scanner(new File(/*Replace with the path*/"/workspace/APCS/phrases/phrases.txt"));
       while (sc.hasNextLine())
       {
         count++;
@@ -37,9 +37,9 @@ private String loadPhrase()
         }
       }
     } catch (Exception e) { System.out.println("Error reading or parsing phrases.txt"); }
-
+    return tempPhrase;
   }
-  public String askLetter(){
+  public void askLetter(){
     String letterGuessed = "";
     System.out.println("Gimme number");
     
@@ -49,9 +49,9 @@ private String loadPhrase()
   }
   public void runGame(){
     String currentWord = phrase;
-    for(int i = 0; i < phrase.length; i++) {
+    for(int i = 0; i < phrase.length(); i++) {
       
-      if(phrase.substring(i-1,i).equals(" ")){
+      if(phrase.substring(i,i+1).equals(" ")){
         System.out.print(" ");
       }
       else System.out.print("_");
@@ -66,3 +66,4 @@ private String loadPhrase()
      */
     
   }
+}
