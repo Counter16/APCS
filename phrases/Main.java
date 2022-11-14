@@ -8,9 +8,8 @@ public class Main {
        
         System.out.println("What is player two's name?");
         Player playerTwo = new Player(sc.nextLine(), 0);
-        sc.close();
+
         System.out.println(playerOne.getName());
-        System.out.println(playerTwo.getName());
         Board oihoih = new Board();
         oihoih.runGame();
     }

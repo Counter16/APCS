@@ -48,15 +48,30 @@ private String loadPhrase()
     return loadPhrase();
   }
   public void runGame(){
-    String currentWord = phrase;
+    String currentLetter = "";
+    String bombThreat = "";    
     for(int i = 0; i < phrase.length(); i++) {
       
       if(phrase.substring(i,i+1).equals(" ")){
-        System.out.print(" ");
+        bombThreat = bombThreat.concat(" ");
       }
-      else System.out.print("_");
+      else bombThreat = bombThreat.concat("_");
     }
-
+    System.out.println(bombThreat);
+    System.out.println("\nGIVE LETTER OR MAIL PIPEBOMB!");
+      currentLetter = sc.nextLine();
+    //for(int j = 0; j < phrase.length(); j++) {
+      String yes = new String(phrase);
+      int k = yes.indexOf(currentLetter);;
+      String bombThreats = bombThreat;
+      for(int y = k; y >= 0; y++){
+        bombThreats = bombThreat.substring(0 , k+y) + currentLetter + bombThreat.substring(k+y+1);
+        System.out.println(bombThreats);
+        yes = yes.replaceFirst(currentLetter, "");
+        k = yes.indexOf(currentLetter);
+      }  
+      System.out.println(bombThreats);
+      System.out.println(phrase);
     /* 
      * get the end word
      * check for total mistakes == 7
