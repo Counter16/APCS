@@ -28,8 +28,7 @@ public class Main {
         oihoih.runGame();
         oihoih.runGame();
         oihoih.runGame();
-        oihoih.runGame();
-        oihoih.runGame();
+        
 
         sc.close();
     }

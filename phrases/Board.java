@@ -49,8 +49,12 @@ private String loadPhrase()
   public String getLoadPhrase(){
     return loadPhrase();
   }
+  private int j = phrase.length();
+  public int getHog(){
+    return j;
+  }
   private String lettersGuessed = "";
-  private int fullyRevealed = 0;
+  private int counter = 0;
   public void runGame(){
     String bombThreat = "";
     String currentLetter = sc.nextLine();  
@@ -62,20 +66,21 @@ private String loadPhrase()
         if(c.equals(" ")){
           bombThreat = bombThreat.concat(" ");
         }
-        else if (lettersGuessed.contains(c)){
+        if(currentLetter.contains(c)){
+          counter++;
+        }
+        if (lettersGuessed.contains(c)){
           bombThreat = bombThreat.concat(c);
         }
         else {
           bombThreat = bombThreat.concat("_");
         }
-        if(bombThreat.contains(c)){
-          fullyRevealed++;
-        }
+        
       
       }
       
       System.out.println(bombThreat);
-      if (fullyRevealed > 0){
+      if (counter > 0){
         System.out.println("Guess another letter!");
 
       }
