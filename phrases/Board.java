@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import javax.swing.event.SwingPropertyChangeSupport;
+
 import java.io.File;
 public class Board{
 private String phrase = loadPhrase();
@@ -39,38 +42,56 @@ private String loadPhrase()
     } catch (Exception e) { System.out.println("Error reading or parsing phrases.txt"); }
     return tempPhrase;
   }
-  public void askLetter(){
-    String letterGuessed = "";
-    System.out.println("Gimme number");
-    
-  }
+  // public void askLetter(){
+  //   String letterGuessed = "";
+  //   System.out.println("Gimme number");
+  // }
   public String getLoadPhrase(){
     return loadPhrase();
   }
+  private String lettersGuessed = "";
+  private int fullyRevealed = 0;
   public void runGame(){
-    String currentLetter = "";
-    String bombThreat = "";    
-    for(int i = 0; i < phrase.length(); i++) {
+    String bombThreat = "";
+    String currentLetter = sc.nextLine();  
+    lettersGuessed += currentLetter;
+  
+    
+      for(int i = 0; i < phrase.length(); i++) {
+        String c = phrase.substring(i,i+1);
+        if(c.equals(" ")){
+          bombThreat = bombThreat.concat(" ");
+        }
+        else if (lettersGuessed.contains(c)){
+          bombThreat = bombThreat.concat(c);
+        }
+        else {
+          bombThreat = bombThreat.concat("_");
+        }
+        if(bombThreat.contains(c)){
+          fullyRevealed++;
+        }
       
-      if(phrase.substring(i,i+1).equals(" ")){
-        bombThreat = bombThreat.concat(" ");
       }
-      else bombThreat = bombThreat.concat("_");
-    }
-    System.out.println(bombThreat);
-    System.out.println("\nGIVE LETTER OR MAIL PIPEBOMB!");
-      currentLetter = sc.nextLine();
+      
+      System.out.println(bombThreat);
+      if (fullyRevealed > 0){
+        System.out.println("Guess another letter!");
+
+      }
+      else System.out.println("Now we switch. Guess a letter, player 2"); //+ playerTwo.getName);
+      
     //for(int j = 0; j < phrase.length(); j++) {
-      String yes = new String(phrase);
-      int k = yes.indexOf(currentLetter);;
-      String bombThreats = bombThreat;
-      for(int y = k; y >= 0; y++){
-        bombThreats = bombThreat.substring(0 , k+y) + currentLetter + bombThreat.substring(k+y+1);
-        System.out.println(bombThreats);
-        yes = yes.replaceFirst(currentLetter, "");
-        k = yes.indexOf(currentLetter);
-      }  
-      System.out.println(bombThreats);
+      // String yes = new String(phrase);
+      // int k = yes.indexOf(currentLetter);
+      // String bombThreats = bombThreat;
+      // for(int y = k; y >= 0; y++){
+      //   bombThreats = bombThreat.substring(0 , k+y) + currentLetter + bombThreat.substring(k+y+1);
+      //   System.out.println(bombThreats);
+      //   yes = yes.replaceFirst(currentLetter, "");
+      //   k = yes.indexOf(currentLetter);
+      // }  
+      // System.out.println(bombThreats);
       System.out.println(phrase);
     /* 
      * get the end word
@@ -80,5 +101,6 @@ private String loadPhrase()
      * print out the current word
      */
     
-  }
+  
+    }
 }
