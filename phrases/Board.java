@@ -50,12 +50,12 @@ private String loadPhrase()
     return loadPhrase();
   }
   private int j = phrase.length();
-  public int getHog(){
+  public int getJ(){
     return j;
   }
   private String lettersGuessed = "";
-  private int counter = 0;
   public void runGame(){
+    int counter = 0;
     String bombThreat = "";
     String currentLetter = sc.nextLine();  
     lettersGuessed += currentLetter;
@@ -66,18 +66,22 @@ private String loadPhrase()
         if(c.equals(" ")){
           bombThreat = bombThreat.concat(" ");
         }
-        if(currentLetter.contains(c)){
-          counter++;
+        else if(currentLetter.equals(" ")){
+          System.out.println("You cannot input a space, dingus. Your turn will now be skipped because of your foolishness.");
+          break;
         }
-        if (lettersGuessed.contains(c)){
+        else if (lettersGuessed.contains(c)){
           bombThreat = bombThreat.concat(c);
         }
         else {
           bombThreat = bombThreat.concat("_");
         }
-        
+        if(currentLetter.contains(c)){
+          counter++;
+          j--;
+        }
       
-      }
+      
       
       System.out.println(bombThreat);
       if (counter > 0){
@@ -85,7 +89,7 @@ private String loadPhrase()
 
       }
       else System.out.println("Now we switch. Guess a letter, player 2"); //+ playerTwo.getName);
-      
+  }  
     //for(int j = 0; j < phrase.length(); j++) {
       // String yes = new String(phrase);
       // int k = yes.indexOf(currentLetter);
@@ -107,5 +111,5 @@ private String loadPhrase()
      */
     
   
-    }
+}
 }

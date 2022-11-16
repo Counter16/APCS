@@ -24,10 +24,9 @@ public class Main {
         System.out.println("\nInput a letter, " + playerOne.getName());
 
         Board oihoih = new Board();
-        oihoih.runGame();
-        oihoih.runGame();
-        oihoih.runGame();
-        oihoih.runGame();
+        while(oihoih.getJ() > 0){ 
+            oihoih.runGame();
+        }
         
 
         sc.close();
