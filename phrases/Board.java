@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import javax.swing.event.SwingPropertyChangeSupport;
-
 import java.io.File;
 
 public class Board {

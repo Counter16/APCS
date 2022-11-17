@@ -26,6 +26,7 @@ public class Main {
         while(oihoih.getJ() == 0){
             oihoih.runGame(playerOne.getName(),playerTwo.getName());
         }
+        sc.close();
     }
 
 }
