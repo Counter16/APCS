@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String args[]){
+        Board oihoih = new Board();
         System.out.println("What is player one's name?");
         Scanner sc = new Scanner(System.in);
         Player playerOne = new Player(sc.nextLine(), 0);
@@ -21,11 +22,9 @@ public class Main {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }        
-        System.out.println("\nInput a letter, " + playerOne.getName());
-
-        Board oihoih = new Board();
-        while(true){
-            oihoih.runGame();
+            oihoih.intro(playerOne.getName());
+        while(oihoih.getJ() == 0){
+            oihoih.runGame(playerOne.getName(),playerTwo.getName());
         }
     }
 

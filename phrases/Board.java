@@ -51,52 +51,92 @@ public class Board {
     return loadPhrase();
   }
 
-  private int j = phrase.length();
+  private int j = 0;
 
   public int getJ() {
     return j;
   }
+  public int getPlayerSelection(){
+    return playerSelection;
+  }
 
-  private String lettersGuessed = "";
-
-  public void runGame() {
+  private String lettersGuessed = ""; // holds all the letters guessed
+  private int playerSelection = 1; // chooses which players turn it is based on if the other player guesses right or wrong
+  public void intro(String playerOneName){
+    System.out.println("READ CAREFULLY: Hello my dear friends. Today we will be playing Wheel of Fortune, but with a twist. Instead of each letter having a monetary value, the player who inputs the final guess will be the winner. However, if you don't guess a singular character(keep in mind, punctuation may be involved in the phrases.), you  will lose. With this in mind, lets begin!\n " + playerOneName + ", guess a letter."); // This adds a bit of variability and gives the second player a chance to win.
+  }
+  public void runGame(String playerOneName, String playerTwoName) {
     int counter = 0;
-    String bombThreat = "";
+    String phraseGuesserThingy = "";
     String currentLetter = sc.nextLine();
     currentLetter = currentLetter.toLowerCase();
-    lettersGuessed += currentLetter;
-
+     
+    if(currentLetter.length() > 1){
+      lettersGuessed.concat("");
+    }
+    else if(currentLetter.equals(" ")){
+      lettersGuessed.concat("");
+    }
+    else if(!lettersGuessed.contains(currentLetter)){
+      lettersGuessed += currentLetter;
+    } 
+    
     // while(counter < phrase.length()){
     for (int i = 0; i < phrase.length(); i++) {
       String c = phrase.substring(i, i + 1);
-      if (c.equals(" ")) {
-        bombThreat = bombThreat.concat(" ");
-      } else if (currentLetter.length() > 1) {
-        System.out.println("Stop cheating dingus.");
+      if (currentLetter.length() > 1) {
+        System.out.println("Stop cheating dingus. You inputted multiple characters. Because of this mistake, you have lost, simpleton.");
+        playerSelection = 1 + playerSelection;
+        lettersGuessed.replace(currentLetter, "");
+        i = phrase.length() - 1;
       } else if (currentLetter.equals(" ")) {
-        System.out.println("You cannot input a space, dingus.");
-        break;
+        System.out.println("You cannot input a space, dingus. Because of this mistake, you have lost, simpleton.");
+        playerSelection = 1 + playerSelection;
+        lettersGuessed.replace(currentLetter, "");
+        i = phrase.length() - 1;
+      }  else if (c.equals(" ")) {
+          phraseGuesserThingy = phraseGuesserThingy.concat(" "); 
       } else if (lettersGuessed.contains(c)) {
-        bombThreat = bombThreat.concat(c);
+        phraseGuesserThingy = phraseGuesserThingy.concat(c);
       } else {
-        bombThreat = bombThreat.concat("_");
+        phraseGuesserThingy = phraseGuesserThingy.concat("_");        
       }
       if (currentLetter.contains(c)) {
         counter++;
-        j--;
       }
-      // }
-
-    }
-    System.out.println(bombThreat);
-    System.out.println("Letters that have already been guessed: " + lettersGuessed);
-    if (counter > 0) {
-      System.out.println("Guess another letter!");
-
-    } else {
-      System.out.println("Now we switch players. Guess a letter:"); // + playerTwo.getName);
       
     }
+    System.out.println(phraseGuesserThingy);
+    System.out.println(phrase);
+    System.out.println("Letters that have already been guessed: " + lettersGuessed);
+
+    
+    if (!phraseGuesserThingy.contains("_")){
+      if(playerSelection % 2 == 1){
+        System.out.println("Congratulations " + playerOneName + "! You win the game!");
+        j = 1;
+      }
+      if(playerSelection % 2 == 0){
+        System.out.println("Congratulations " + playerTwoName + "! You win the game!");
+        j = 1;
+      }
+    }
+    else if (counter > 0) {
+      System.out.println("Good Job, you guessed right! Guess another letter!");
+    }
+    else if(playerSelection == 1 && counter == 0){
+      System.out.println("You didn't guess a right letter. Now we switch players. Guess a letter, " + playerTwoName);
+      playerSelection = 2;
+    }
+    else if(playerSelection == 2 && counter == 0){
+      System.out.println("You didn't guess a right letter. Now we switch players. Guess a letter, " + playerOneName);
+      playerSelection = 1;
+    }
+    // } else {
+      
+    //   System.out.printf("Now we switch players. Guess a letter %s:", playerSelection == 1 ? playerOneName : playerTwoName); // + playerTwo.getName);
+
+    // }
     // for(int j = 0; j < phrase.length(); j++) {
     // String yes = new String(phrase);
     // int k = yes.indexOf(currentLetter);
@@ -109,7 +149,7 @@ public class Board {
     // k = yes.indexOf(currentLetter);
     // }
     // System.out.println(bombThreats);
-    System.out.println(phrase);
+    
     /*
      * get the end word
      * check for total mistakes == 7
@@ -118,5 +158,6 @@ public class Board {
      * print out the current word
      */
 
-  }
+  
+}
 }
