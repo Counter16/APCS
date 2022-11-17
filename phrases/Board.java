@@ -104,7 +104,6 @@ public class Board {
       
     }
     System.out.println(phraseGuesserThingy);
-    System.out.println(phrase);
     System.out.println("Letters that have already been guessed: " + lettersGuessed);
 
     
