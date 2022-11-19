@@ -20,9 +20,13 @@ public class Game {
     //Allows a player to take a specific amount of pieces.
     //Adds the amount of pieces taken to the user's score.
     public int takePiece(){
+        int scoree = 0;
         System.out.println("There are "+ pieces+" remaining!");
         System.out.println("Pick a number of pieces to take. It cannot be more than half of the remaining pieces.");
         int take = sc.nextInt();
+        if(take <= pieces / 2){
+            scoree += take;
+        }
        //TO DO: Grab the user amount of pieces and repeat if it not allowed.
         while (!isLegal(take)){
             System.out.println("You moron. Pick a number that works.");
