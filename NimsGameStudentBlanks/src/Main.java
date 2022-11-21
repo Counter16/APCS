@@ -15,7 +15,7 @@ public class Main {
         Player p2 = new Player(playerTwoName);
         //TO DO: Create Player 2
 
-        String again = "Literally any string";
+        String again = "fortnite gaming gamer games";
         Player currentPlayer;
         
         //Runs the game
@@ -35,15 +35,21 @@ public class Main {
                //TO DO            
                currentPlayer = game.getNextPlayer();
                System.out.println("It is " + currentPlayer.getName() + "'s turn.");
-               game.takePiece();
-
+               int pieces = game.takePiece();
+               currentPlayer.adjustScore(pieces);
+                
             }
-            System.out.println(currentPlayer.getName()+ " Won!!");
+            if(currentPlayer.equals(p1) && game.isComplete()){    
+                System.out.println(playerTwoName + " Won!!");
+            } else System.out.println(playerOneName + " Won!!");
             System.out.println(p1.getName() +" had removed "+ p1.getScore()+" pieces!");
             System.out.println(p2.getName() +" had removed "+ p2.getScore()+" pieces!");
             System.out.println("------------------------------------------");
             System.out.println("Enter q to quit, enter anything else to play again.");
             again = sc.nextLine();
+            if (again.equals((((("q")))))){
+                break;
+            }
         }
         System.out.println("Thank you for playing!");
         sc.close();
