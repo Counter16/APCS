@@ -12,7 +12,7 @@ public class Game {
         return p2;
     }
     public Game(Player p1, Player p2){
-        pieces = (int) Math.random() * 41 + 10; //To Do: Grab a random value between 10 and 50
+        pieces = (int) (Math.random() * 41 + 10); //To Do: Grab a random value between 10 and 50
         this.p1 = p1;
         this.p2 = p2;
     }
@@ -21,7 +21,7 @@ public class Game {
     //Adds the amount of pieces taken to the user's score.
     public int takePiece(){
         int scoree = 0;
-        System.out.println("There are "+ pieces+" remaining!");
+        System.out.println("There are "+ pieces+" pieces remaining!");
         System.out.println("Pick a number of pieces to take. It cannot be more than half of the remaining pieces.");
         int take = sc.nextInt();
         if(take <= pieces / 2){
@@ -41,10 +41,10 @@ public class Game {
 
     public Player getNextPlayer(){
     //Changes which players turn it is and returns the current player.
-        if(currentPlayer == p1){
+        if(currentPlayer.equals(p1)){
             currentPlayer = p2;
         }
-        if(currentPlayer == p2){
+        if(currentPlayer.equals(p1)){
             currentPlayer = p1;
         }
         return currentPlayer;

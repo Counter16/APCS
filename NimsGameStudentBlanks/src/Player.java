@@ -4,7 +4,7 @@ public class Player {
 
     //DO NOT CHANGE
     public Player(String name){
-
+        
         this.name = name;
         System.out.println("-----------------------------");
     }
