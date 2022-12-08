@@ -222,80 +222,157 @@ Ulaanbaatar
 Montenegro
 Podgorica
 Morocco
+Rabat
 Mozambique
+Maputo
 Myanmar
+Naypyidaw
 Namibia
+Windhoek
 Nauru
+Yaren
 Nepal
+Kathmandu
 Netherlands
+Amsterdam
 New Zealand
+Wellington
 Nicaragua
+Managua
 Niger
+Niamey
 Nigeria
+Abuja
 North Macedonia
+Skopje
 Norway
+Oslo
 Oman
+Muscat
 Pakistan
+Islamabad
 Palau
+Ngerulmud
 Panama
 Papua New Guinea
+Port Moresby
 Paraguay
+Asuncion
 Peru
+Lima
 Philippines
+Manila
 Poland
+Warsaw
 Portugal
+Lisbon
 Qatar
+Doha
 South Korea
+Seoul
 Moldova
+Chisinau
 Romania
+Bucharest
 Russia
+Moscow
 Rwanda
+Kigali
 Saint Kitts and Nevis
+Basseterre
 Saint Lucia
+Castries
 Saint Vincents and the Grenadines
+Kingstown
 Samoa
+Apia
 San Marino
 Sao Tome and Principe
+Sao Tome
 Saudi Arabia 
+Riyadh
 Senegal
+Dakar
 Serbia
+Belgrade
 Seychelles
+Victoria
 Sierra Leone
+Freetown
 Singapore
 Slovakia
+Bratislava
 Slovenia
+Ljubljana
 Solomon Islands
+Honiara
 Somalia
+Mogadishu
 South Africa 
+Cape Town
+Bloemfontein
+Pretoria
 South Sudan
+Juba
 Spain
+Madrid
 Sri Lanka
+Sri Jayawardenapura Kotte
 Sudan 
+Khartoum
 Suriname
+Paramaribo
 Sweden
+Stockholm
 Switzerland
+Bern
 Syria
+Damascus
 Tajikistan
+Dushanbe
 Tanzania
+Dodoma
 Thailand
+Bangkok
 Timor-Leste
+Dili
 Togo
+Lome
 Tonga
+Nuku'alofa
 Trinidad and Tobago
+Port of Spain
 Tunisia
-Turkey
+Tunis
+Turkey 
+Ankara
 Turkmenistan
+Ashgabat
 Tuvalu
+Funafuti
 Uganda
+Kampala
 Ukraine
+Kiev
 United Arab Emirates
+Abu Dhabi
 United Kingdom
+London
 United States of America
+Washington DC
 Uruguay
+Montevideo
 Uzbekistan
+Tashkent
 Vanuatu
+Port Vila
 Venezuela
+Caracas
 Vietnam
+Hanoi
 Yemen
+Sanaa
 Zambia
+Lusaka
 Zimbabwe
+Harare
