@@ -22,4 +22,7 @@ public class Play {
         return listOfOptions;
         
     }
+    public void runGame(String playerOneName, String playerTwoName){
+    
+    }
 }
