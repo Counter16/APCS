@@ -17,7 +17,7 @@ public class Main {
                 "Hello. The game you will be playing will involve the usage of country and capital names. A random country will be outputted, and players will take turns naming countries/capitals that begin with the last letter of the most recent country/capital named. Every correct guess made results in an increase in player score, and the game ends when a player types 'surrender'.");
         Play run = new Play();
         try {
-            Thread.sleep(10000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
@@ -29,19 +29,13 @@ public class Main {
                         + "-Finally, Countries that's capitals are their namesakes(Mexico, Panama) won't have their capitals as point-scoring guesses.");
 
         try {
-            Thread.sleep(10000);
-        } catch (InterruptedException f) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.print("\033[H\033[2J");
-        run.getLoadPhrase();
-        try {
-            Thread.sleep(10000);
+            Thread.sleep(1000);
         } catch (InterruptedException f) {
             Thread.currentThread().interrupt();
         }
         System.out.print("\033[H\033[2J");
 
+        run.runGame(player1Name, player2Name, 3, 3);
         sc.close();
     }
 }
