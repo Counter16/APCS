@@ -32,16 +32,16 @@ public class Main {
             Thread.sleep(10000);
         } catch (InterruptedException f) {
             Thread.currentThread().interrupt();
-            System.out.print("\033[H\033[2J");
         }
+        System.out.print("\033[H\033[2J");
         run.getLoadPhrase();
         try {
             Thread.sleep(10000);
         } catch (InterruptedException f) {
             Thread.currentThread().interrupt();
-            System.out.print("\033[H\033[2J");
         }
+        System.out.print("\033[H\033[2J");
 
-
+        sc.close();
     }
 }
