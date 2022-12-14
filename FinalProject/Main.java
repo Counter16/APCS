@@ -14,7 +14,7 @@ public class Main {
         System.out.print("\033[H\033[2J");
 
         System.out.println(
-                "Hello. The game you will be playing will involve the usage of country and capital names. A random country will be outputted, and players will take turns naming countries/capitals that begin with the last letter of the most recent country/capital named. Every correct guess made results in an increase in player score, and the game ends when a player types 'surrender'.");
+                "Hello, " + player1Name + " and " + player2Name + ". The game you will be playing will involve the usage of country and capital names. A random country will be outputted, and players will take turns naming countries/capitals that begin with the last letter of the most recent country/capital named. Every correct guess made results in an increase in player score, and the game ends when a player types 'surrender'.");
         Play run = new Play();
         try {
             Thread.sleep(1000);
@@ -35,7 +35,7 @@ public class Main {
         }
         System.out.print("\033[H\033[2J");
 
-        run.runGame(player1Name, player2Name, 3, 3);
+        run.runGame(player1Name, player2Name, 3, 3, 0, 0);
         sc.close();
     }
 }
