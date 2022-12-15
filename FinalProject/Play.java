@@ -9,7 +9,7 @@ public class Play {
     String listOfOptions = "";
     String tempPhrase = "";
     int count = 0;
-    int randomInt = (int) ((Math.random() * 50) + 1);
+    int randomInt = (int) ((Math.random() * 300) + 1);
     try {
       Scanner sc = new Scanner(new File(/* Replace with the path */"/workspace/APCS/FinalProject/text.txt"));
       while (sc.hasNextLine()) {
@@ -30,7 +30,7 @@ public class Play {
         "This will be the starting country/capital. From here, you will type a country/capital that ends with the last letter of the above word.");
     Scanner sc = new Scanner(System.in);
     String tempy = sc.nextLine();
-    String yum = "";
+    String yum = ".........";
     int playerCalculator = 0;
     if (tempy.equals("surrender")) {
       if (playerCalculator % 2 == 1) {
@@ -44,6 +44,7 @@ public class Play {
     } else if (listOfOptions.contains(tempy)
         && tempy.substring(0, 1).equals(tempPhrase.substring(tempPhrase.length() - 1, tempPhrase.length()))) {
       player1Score++;
+    } 
     for (int i = 0; i < 500; i++) {
       System.out.println(playerTwoName + ", it's now your turn.");
       tempy = sc.nextLine();
@@ -79,11 +80,10 @@ public class Play {
           && yum.substring(0, 1).equals(tempy.substring(tempy.length() - 1, tempy.length()))) {
         player2Score++;
       }
-      System.out.println(playerTwoName + ", it is now your turn to type a country/capital.");
       playerCalculator++;
-
+    
     }
     sc.close();
   }
 }
-}
+
