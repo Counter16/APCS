@@ -1,7 +1,7 @@
-package RealFinalProject;
+package CompletedFinalProjectCode;
 
-public class Player {
-    private int fortniteSkill;
+public class Player { //Player Class
+    private int fortniteSkill; 
     private int height;
     private int showersTaken;
     private int hoursOutside;
@@ -9,16 +9,16 @@ public class Player {
     private String gamingAbility;
     private String fortniteRank;
 
-    public Player(int fortniteSkill, int height, int showersTaken, int hoursOutside, int grassStrandsTouched, String gamingAbility, String fortniteRank){
+    public Player(int fortniteSkill, int height, int showersTaken, int hoursOutside, int grassStrandsTouched, String gamingAbility, String fortniteRank){ //player parameterized constructor, puts instances into parameter to be set in main
         this.fortniteSkill = fortniteSkill;
         this.height = height;
         this.showersTaken = showersTaken;
         this.hoursOutside = hoursOutside;
-        this.grassStrandsTouched = grassStrandsTouched;
+        this.grassStrandsTouched = grassStrandsTouched; 
         this.gamingAbility = gamingAbility;
         this.fortniteRank = fortniteRank;
     }
-    public int getFortniteSkill(){ //setters/accessors
+    public int getFortniteSkill(){ //getters/accessors
         return fortniteSkill;
     }
     public int getHeight(){
