@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-class Main1 {
+class Main2 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println(chickenNugget(sc.nextLine()));
@@ -52,6 +52,11 @@ class Main1 {
       }
       return chickenNugget(String.join("",elements));
     }
+
+
+
+
+    
     else if (elements.contains("^")) {
       int i = elements.indexOf("^");
       int x = (int) Math.pow(Integer.parseInt(elements.get(i - 1)), Integer.parseInt(elements.get(i + 1)));
@@ -114,3 +119,4 @@ class Main1 {
     }
   }
 }
+

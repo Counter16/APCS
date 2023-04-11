@@ -30,11 +30,14 @@ public class Main {
 
           }
     }
+    
+    }
     public static solve(String x){
       while(x.contains("^")){
         int i = x.indexOf("^"); 
         while((i - 2) >= 0 && x.charAt(i-2) == '(' && x.charAt(i+2) == ')'){
-           
+           int y = x.charAt(i-1)^x.charAt(i+1);
+           String z = 
         }
       }
     }
